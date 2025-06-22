@@ -40,6 +40,7 @@ const ChatContainer = () => {
             <div className='flex-1 overflow-y-auto p-4 space-y-4'>
                 {messages.map((message)=>{
                     const isSent = message.senderId === authUser._id;
+                    return (
                     <div
                     key={message._id}
                     className={`chat ${isSent ? "chat-end":"chat-start"}`}
@@ -69,6 +70,7 @@ const ChatContainer = () => {
                             {message.text && <p>{message.text}</p>}
                         </div>
                     </div>
+                        )
 })}
             </div>
             <MessageInput />
